@@ -1,8 +1,8 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
 RUN yum --disableplugin=subscription-manager -y module-enable php:7.2 \
-&& yum --disableplugin=subscription-manager install httpd php \
-&& yum --disableplugin=subscription-manager clean all
+&& yum --disableplugin=subscription-manager -y install httpd php \
+&& yum --disableplugin=subscription-manager -y clean all
 
 ADD index.php /var/www/html 
 ADD add.php /var/www/html
